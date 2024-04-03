@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.grid_frs = new System.Windows.Forms.DataGridView();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_add = new System.Windows.Forms.Button();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.txtAdresse = new System.Windows.Forms.TextBox();
@@ -44,6 +40,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_export = new System.Windows.Forms.Button();
             this.btn_import = new System.Windows.Forms.Button();
+            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid_frs)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,27 +59,6 @@
             this.grid_frs.Name = "grid_frs";
             this.grid_frs.Size = new System.Drawing.Size(638, 479);
             this.grid_frs.TabIndex = 0;
-          //  this.grid_frs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nom";
-            this.nom.Name = "nom";
-            // 
-            // adresse
-            // 
-            this.adresse.HeaderText = "Adresse";
-            this.adresse.Name = "adresse";
-            // 
-            // tel
-            // 
-            this.tel.HeaderText = "Tel";
-            this.tel.Name = "tel";
-            // 
-            // mail
-            // 
-            this.mail.HeaderText = "Mail";
-            this.mail.Name = "mail";
             // 
             // btn_add
             // 
@@ -165,7 +144,7 @@
             this.btn_export.TabIndex = 10;
             this.btn_export.Text = "Export";
             this.btn_export.UseVisualStyleBackColor = true;
-            this.btn_export.Click += new System.EventHandler(this.button1_Click);
+            this.btn_export.Click += new System.EventHandler(this.btn_export_Click);
             // 
             // btn_import
             // 
@@ -177,6 +156,30 @@
             this.btn_import.Text = "Import";
             this.btn_import.UseVisualStyleBackColor = true;
             this.btn_import.Click += new System.EventHandler(this.btn_import_Click);
+            // 
+            // nom
+            // 
+            this.nom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nom.HeaderText = "Nom";
+            this.nom.Name = "nom";
+            // 
+            // adresse
+            // 
+            this.adresse.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.adresse.HeaderText = "Adresse";
+            this.adresse.Name = "adresse";
+            // 
+            // tel
+            // 
+            this.tel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tel.HeaderText = "Tel";
+            this.tel.Name = "tel";
+            // 
+            // mail
+            // 
+            this.mail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mail.HeaderText = "Mail";
+            this.mail.Name = "mail";
             // 
             // frm_frs
             // 
@@ -207,10 +210,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grid_frs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adresse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mail;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.TextBox txtAdresse;
@@ -222,5 +221,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_export;
         private System.Windows.Forms.Button btn_import;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mail;
     }
 }

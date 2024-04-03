@@ -8,11 +8,13 @@ namespace gestion_stock.oPOO
 {
     internal class Fournisseur
     {
+        #region attribute
         private int ? _id;
         private string _Nom;
         private string _Adresse;
         private string _Tel;
         private string _Mail;
+        #endregion
 
         public Fournisseur(string unNom, string uneAdresse, string unTel, string unMail, int ? unId   ) {
             this.Id = unId;
@@ -21,11 +23,12 @@ namespace gestion_stock.oPOO
             this.Nom = unNom;
             this.Adresse = uneAdresse;
         }
-
+        #region getter_setter
         public int? Id { get => _id; set => _id = value; }
         public string Nom { get => _Nom; set => _Nom = value; }
         public string Adresse { get => _Adresse; set => _Adresse = value; }
         public string Tel { get => _Tel; set => _Tel = value; }
         public string Mail { get => _Mail; set => _Mail = value; }
+        #endregion
     }
 }

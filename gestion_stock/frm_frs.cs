@@ -48,25 +48,6 @@ namespace gestion_stock
             init_frm();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            List<string> lst = new List<string>();
-            foreach(DataGridViewRow f in grid_frs.Rows)
-            {
-                if (f.Cells["nom"].Value!=null)
-                {
-                    string nom = f.Cells["nom"].Value.ToString();
-                    string adresse = f.Cells[1].Value.ToString();
-                    gestion_stock.oPOO.Fournisseur frs = new gestion_stock.oPOO.Fournisseur(nom, adresse, f.Cells[2].Value.ToString(), f.Cells[3].Value.ToString(), 0);
-                    lst.Add(JsonConvert.SerializeObject(frs));
-                }
-            }
-            string obj = JsonConvert.SerializeObject(lst);
-            using (StreamWriter writer = new StreamWriter("data.json"))
-            {
-                writer.WriteLine(obj);
-            }
-        }
 
         private void btn_import_Click(object sender, EventArgs e)
         {
@@ -95,6 +76,26 @@ namespace gestion_stock
             else
             {
                 Console.WriteLine("Le fichier n'existe pas.");
+            }
+        }
+
+        private void btn_export_Click(object sender, EventArgs e)
+        {
+            List<string> lst = new List<string>();
+            foreach (DataGridViewRow f in grid_frs.Rows)
+            {
+                if (f.Cells["nom"].Value != null)
+                {
+                    string nom = f.Cells["nom"].Value.ToString();
+                    string adresse = f.Cells[1].Value.ToString();
+                    gestion_stock.oPOO.Fournisseur frs = new gestion_stock.oPOO.Fournisseur(nom, adresse, f.Cells[2].Value.ToString(), f.Cells[3].Value.ToString(), 0);
+                    lst.Add(JsonConvert.SerializeObject(frs));
+                }
+            }
+            string obj = JsonConvert.SerializeObject(lst);
+            using (StreamWriter writer = new StreamWriter("data.json"))
+            {
+                writer.WriteLine(obj);
             }
         }
     }
